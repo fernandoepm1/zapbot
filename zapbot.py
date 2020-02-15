@@ -4,7 +4,7 @@ import os
 
 class Zapbot:
   dir_path = os.getcwd()
-  chromedriver = os.path.join(dir_path, "chromedriver")
+  chromedriver = os.path.join(dir_path, "chromedriver_linux64")
   profile = os.path.join(dir_path, "profile", "wpp")
 
   def __init__(self):
