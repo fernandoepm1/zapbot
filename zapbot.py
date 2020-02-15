@@ -26,4 +26,18 @@ class Zapbot:
     except Exception as e:
       print("Chat could not be opened", e)
 
+  def send_message(self, message):
+    try:
+      self.chat_box = self.driver.find_elements_by_class_name("_2S1VP")
+      self.chat_box.send_keys(message)
+      sleep(1)
+
+      self.send_button = self.driver.find_element_by_class_name("_35EW6")
+      self.send_button.click()
+      sleep(2)
+    except Exception as e:
+      print("Could not send message to contact", e)
+
 bot = Zapbot()
+bot.open_chat("AK45")
+bot.send_message("caralho meu rei")
