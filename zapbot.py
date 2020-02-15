@@ -38,6 +38,19 @@ class Zapbot:
     except Exception as e:
       print("Could not send message to contact", e)
 
+  def send_media(self, media):
+    try:
+      self.clip_button = self.driver.find_element_by_css_selector("span[data-icon='clip']").click()
+      attach = self.driver.find_element_by_css_selector("input[type='file'")
+      attach.send_keys(media)
+      sleep(3)
+
+      send = self.driver.find_element_by_xpath("//div[contains(@class, 'yavlE')]")
+      self.click()
+    except Exception as e:
+      print("Error sending media to contact", e)
+
 bot = Zapbot()
-bot.open_chat("AK45")
-bot.send_message("caralho meu rei")
+bot.open_chat("contact name")
+bot.send_message("a beautiful message")
+bot.send_media("/path/to/file")
