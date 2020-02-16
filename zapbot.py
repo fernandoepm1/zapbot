@@ -42,13 +42,16 @@ class Zapbot:
 
   def send_media(self, media):
     try:
-      self.clip_button = self.driver.find_element_by_css_selector("span[data-icon='clip']").click()
-      attach = self.driver.find_element_by_css_selector("input[type='file']")
-      attach.send_keys(media)
+      clip_button = self.driver.find_element_by_xpath("//div[@role='button'][@title='Attach']")
+      clip_button.click()
+      sleep(2)
+
+      attach_file = self.driver.find_element_by_xpath("//input[@type='file']")
+      attach_file.send_keys(media)
       sleep(3)
 
-      send = self.driver.find_element_by_xpath("//div[contains(@class, 'yavlE')]")
-      send.click()
+      send_button = self.driver.find_element_by_xpath("//span[@data-icon='send-light']")
+      send_button.click()
     except Exception as e:
       print("Error sending media to contact", e)
 
