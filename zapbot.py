@@ -29,12 +29,13 @@ class Zapbot:
 
   def send_message(self, message):
     try:
-      self.chat_box = self.driver.find_elements_by_class_name("_2S1VP")
+      #chat_box_classes = "copyable-text selectable-text"
+      self.chat_box = self.driver.find_element_by_class_name("_3u328")
       self.chat_box.send_keys(message)
       sleep(1)
 
-      self.send_button = self.driver.find_element_by_class_name("_35EW6")
-      self.send_button.click()
+      send_button = self.driver.find_element_by_xpath("//button//span[@data-icon='send']")
+      send_button.click()
       sleep(2)
     except Exception as e:
       print("Could not send message to contact", e)
