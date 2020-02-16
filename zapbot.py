@@ -14,14 +14,15 @@ class Zapbot:
     self.driver.get("https://web.whatsapp.com/")
     self.driver.implicitly_wait(15)
 
-  def open_chat(self, contact):
+  def open_chat(self, contact_name):
     try:
-      self.search_box = self.driver.find_element_by_class_name("jN-F5")
-      self.search_box.send_keys(contact)
+      search_title = "Search or start new chat"
+      search_box = self.driver.find_element_by_xpath("//input[@title='{}']".format(search_title))
+      search_box.send_keys(contact_name)
       sleep(2)
 
-      self.contact = self.driver.find_element_by_xpath("//span[@title = '{}']".format(contact))
-      self.contact.click()
+      contact = self.driver.find_element_by_xpath("//span[@title='{}']".format(contact_name))
+      contact.click()
       sleep(2)
     except Exception as e:
       print("Chat could not be opened", e)
