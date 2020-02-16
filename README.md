@@ -96,14 +96,21 @@ If you want to use another webdriver, Firefox's for instance, you can find more 
 git clone git@github.com:fernandoepm1/zapbot.git
 ```
 
+### Choose webdriver
+
+* Check your current Chromium/Chrome version and download the appropriate chromedriver (if you're using version Chromium 80 and linux64, the chromedriver in this project is already the right one)
+* If you don't want to use Chrome, then download the appropriate webdriver and change the code to instanciate the selected browser
+
 ### Run script
 
 * Using Python 3.x
     ```bash
-    python3 ...
+    python3 zapbot.py
     ```
 
 * Using Python 2.x
     ```bash
-    python ...
+    python zapbot.py
     ```
+
+**Important:** After the first time the script is run, it will create the profile folder to save your current session, WhatsApp will request the QRcode, but just for the first time (as long as the profile folder is there). It's possible the first time does not work because of the QRcode request, but after that it should work properly.
