@@ -4,21 +4,21 @@
 
 ### Description
 
-A very simple bot developed using a single Python script and Selenium webdriver for Chrome.
+A very simple and generic bot developed using Python and Selenium.
+He can be used as a starting point for some more complex operations depending on what's needed to be done.
 
 ### What can it do?
 
-* ...
-* ...
+* Open a specific chat given the contact or group name
+* Send a message to the contact or group that was selected previously (depends on the previous method)
+* Send a media supported file by WhatsApp and optionally use a caption (if the file is an image),
+it also depends on previously opening a chat
 
 ## Requirements
 
 * You need to have Git installed
-
 * You need to have Python installed
-
 * You need to have Selenium installed (you can install it via _Pip_)
-
 * You need to have a chosen webdriver installed
 
 ## Dependencies
